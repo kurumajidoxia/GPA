@@ -1,4 +1,4 @@
-This python file convert grade in hundred-point system to GPA. Useful for studying or applying jobs abroad.
+This python file convert grade in hundred-point system to GPA. Useful for studying or applying jobs abroad. The result includes both weighted GPA and weighted average in hundred-point system.
 
 Prepare a csv file of your grades in following template:
 	number of credit, score
