@@ -1,0 +1,18 @@
+This python file convert grade in hundred-point system to GPA. Useful for studying or applying jobs abroad.
+
+Prepare a csv file of your grades in following template:
+	number of credit, score
+One line for one subject
+E.g. 
+2, 88
+3, 75
+1, 90
+.
+.
+.
+
+execute the file in following template:
+
+python GPA.py filename_of_grade
+
+
