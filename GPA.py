@@ -1,26 +1,35 @@
 #Date: 2018.Apr.13
 #Author: Yu-Sin Lin
 #Convert hundred-point grade system to GPA system
-#Version: 1.0
+#Version: 1.1
 
 import sys
 
 #read file
 if len(sys.argv) < 2:
-	print "Lack of argument"
+	print "Lack of argument, please add filename"
 	sys.exit()
 
-#read file to get credits and grades
+#check correctness of filename
+filename = sys.argv[1]
+try:
+	f = open(filename,'r')
+except IOError:
+	print "cannot open %s, please check filename." % (sys.argv[1])
+
+#read file and store no.credits and scores
 credits = []
 grades = []
-f = open(sys.argv[1],'r')
-for line in f:
-	credit, grade = line.split(',')
+for i, line in enumerate(f):
+	try:
+		credit, grade = line.split(',')
+	except:
+		print "An incorrect format in line %d in %s" %(i+1, filename)
+		sys.exit()
 	credit = credit.strip()
 	grade = grade.strip()
 	credits.append(credit)
 	grades.append(grade)
-
 f.close()
 
 #convert to gpa and convert grades from string to int
@@ -62,5 +71,5 @@ for i, c in enumerate(credits):
 GPA = weightedGPA/total_credit
 AVG_hundred = weightedGrade/float(total_credit)
 
-print "Your GPA is %f, AVG is %f" % (GPA, AVG_hundred)
+print "The GPA is %f, AVG is %f" % (GPA, AVG_hundred)
 
