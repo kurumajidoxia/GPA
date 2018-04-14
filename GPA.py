@@ -7,7 +7,7 @@ import sys
 
 #read file
 if len(sys.argv) < 2:
-	print "Lack of argument, please add filename"
+	print "Lack of argument, please add file name"
 	sys.exit()
 
 #check correctness of filename
@@ -15,7 +15,7 @@ filename = sys.argv[1]
 try:
 	f = open(filename,'r')
 except IOError:
-	print "cannot open %s, please check filename." % (sys.argv[1])
+	print "cannot open %s, please check file name." % (filename)
 
 #read file and store no.credits and scores
 credits = []
